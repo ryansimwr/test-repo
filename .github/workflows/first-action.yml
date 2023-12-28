@@ -1,0 +1,13 @@
+# 1. Define the name of the workflow first
+name: First Workflow
+# 2. When the workflow should be executed based on event/events
+on: workflow_dispatch #allows the user to manually trigger the workflow
+jobs: #must be jobs as in plural, and
+  first-job: #name of the first job in this list
+    runs-on: ubuntu-latest #The label of the image OS to be used to run this workflow
+    steps:
+      - name: Print greeting
+        run: echo "Hello World!"
+      - name: Print goodbye
+        run: echo "Done! bye!"
+  
