@@ -2,6 +2,7 @@ name: Deploy Project
 on: push
 jobs:
   test:
+    name: "test"
     runs-on: ubuntu-latest
     steps:
       - name: Fetch repository
@@ -19,6 +20,8 @@ jobs:
         run: npm test
 
   deploy:
+    name: "deployment"
+    needs: [test]
     runs-on: ubuntu-latest
     steps:
       - name: Fetch repository
